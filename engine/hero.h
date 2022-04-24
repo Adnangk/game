@@ -1,12 +1,12 @@
 #pragma once
 
-#include "actor.h"
-#include "herotype.h"
-#include "animatedsprite.h"
 #include "action.h"
+#include "actor.h"
+#include "animatedsprite.h"
+#include "herotype.h"
 
 class Hero : public Actor {
-public:
+   public:
     Hero(Engine& engine, HeroType type, const Vec& position);
     virtual ~Hero() {}
 
@@ -23,10 +23,10 @@ public:
 
     // called by engine when a button press or mouse click has taken place
     void handle_input(const std::string& key_name);
-    
+
     HeroType type;
-    
-private:
+
+   private:
     // next action is set by engine via handle_input
     std::unique_ptr<Action> next_action;
     AnimatedSprite sprite;

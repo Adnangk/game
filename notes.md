@@ -20,7 +20,7 @@ Looking in the `main.cpp`
  "none" is name of sprite in `assets/hero.txt`
 
  Todo:
- - lok up shareed_ptr in Tour of C++ or c++ reference
+ - lok up shared_ptr in Tour of C++ or c++ reference
 - shared-ptr, make-shared: what is the relationship? where do i specify the type?
 unordered map? string and reaction
 -reaction = std::function<std::unique-ptr<Action>();, what is a function?>
