@@ -24,3 +24,4 @@ Looking in the `main.cpp`
 - shared-ptr, make-shared: what is the relationship? where do i specify the type?
 unordered map? string and reaction
 -reaction = std::function<std::unique-ptr<Action>();, what is a function?>
+

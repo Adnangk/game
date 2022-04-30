@@ -10,13 +10,12 @@ class Actor;
 // the result of performing an Action
 struct Result {
     bool succeeded{false};
-    std::unique_ptr<Action> next_action{nullptr}; // allows chaining of actions
+    std::unique_ptr<Action> next_action{nullptr};  // allows chaining of actions
 };
-
 
 // base class for all actions
 class Action {
-public:
+   public:
     virtual ~Action() {}
     // bind is called automatically within the engine,
     // you do not need to call it yourself
@@ -25,11 +24,10 @@ public:
     // override perform in a derived class
     virtual Result perform(Engine& engine) = 0;
 
-protected:
+   protected:
     // the actor who is performing this action
     std::shared_ptr<Actor> actor;
 };
-    
 
 // Helper functions for generating results. You will use these inside
 // Perform() of derived classes to signal whether an action was
@@ -51,11 +49,9 @@ Result success(const T& action) {
 // the actor to have another turn
 Result failure();
 
-
 // return alternative(another_action{}) to substitute the actor's
 // current action for another
 template <typename T>
 Result alternative(const T& action) {
     return {false, std::make_unique<T>(action)};
 }
-
