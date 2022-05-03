@@ -10,5 +10,7 @@ int main() {
 
     engine.create_hero(Heros::wizard);
     engine.create_monster(Monsters::goblin());
+    engine.create_monster(Monsters::zombie_small());
+    engine.create_monster(Monsters::muddy());
     engine.run();
 }
