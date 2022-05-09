@@ -2,6 +2,7 @@
 #include "move.h"
 
 #include "actor.h"
+#include "attack.h"
 #include "engine.h"
 #include "opendoor.h"
 #include "vec.h"
@@ -16,7 +17,12 @@ Result Move::perform(Engine& engine) {
         return failure();  // alternative (Attack{*tile.actor})
         // Attack& actor
     } else if (tile.actor) {
-        return success();
+        if (actor->team != tile.actor->team) {
+            return alternative(Attack{*tile.actor});
+
+        } else {
+            return success();
+        }
     }
 
     else if (tile.is_door()) {
@@ -24,8 +30,7 @@ Result Move::perform(Engine& engine) {
         if (door.is_open() == false) {
             return alternative(OpenDoor{new_position});
         }
-    }  // else {
+    }
     actor->move_to(new_position);
     return success();
-    //}
 }

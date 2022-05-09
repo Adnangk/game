@@ -1,5 +1,6 @@
 // Adnan Ahmed
 #pragma once
+#include "cleaver.h"
 #include "closedoor.h"
 #include "herotype.h"
 #include "move.h"
@@ -28,11 +29,11 @@ std::unordered_map<std::string, Reaction> key_bindings = {
      []() {
          return std::make_unique<Move>(Vec{0, -1});
      }},
-    {"B", []() { return std::make_unique<Rest>(); }},
+
     {"C", []() { return std::make_unique<CloseDoor>(); }},
 };
 
-const HeroType wizard{"wizard", default_speed, 15, std::make_shared<None>(),
-                      key_bindings};
+const HeroType wizard{"wizard", default_speed, 15,
+                      std::make_shared<Cleaver>(12), key_bindings};
 
 }  // namespace Heros

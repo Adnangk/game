@@ -1,5 +1,8 @@
 #include "monsters.h"
 
+#include "axe.h"
+#include "bhammer.h"
+#include "cleaver.h"
 #include "engine.h"
 #include "monster.h"
 #include "move.h"
@@ -30,19 +33,19 @@ std::unique_ptr<Action> default_behavior(Engine& engine, Monster& me) {
 }
 MonsterType goblin() {
     int health = 3;
-    return {"goblin", default_speed, health, std::make_shared<None>(),
+    return {"goblin", default_speed, health, std::make_shared<BigHammer>(9),
             default_behavior};
 }
 
 MonsterType zombie_small() {
     int health = 3;
-    return {"zombie_small", default_speed, health, std::make_shared<None>(),
+    return {"zombie_small", default_speed, health, std::make_shared<Axe>(5),
             default_behavior};
 }
 
 MonsterType muddy() {
     int health = 3;
-    return {"muddy", default_speed, health, std::make_shared<None>(),
+    return {"muddy", default_speed, health, std::make_shared<Cleaver>(2),
             default_behavior};
 }
 }  // namespace Monsters

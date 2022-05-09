@@ -1,13 +1,14 @@
 #pragma once
 #include "actor.h"
+#include "engine.h"
 #include "event.h"
+#include "hit.h"
 
-class Hit : public Event {
+class die : public Event {
    public:
-    Hit(Actor& defender, int amount);
+    die(Actor& actor);
     void execute(Engine& engine) override;
 
    private:
-    Actor& defender;
-    int amount;
+    Actor& actor;
 };

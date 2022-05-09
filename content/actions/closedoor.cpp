@@ -18,7 +18,7 @@ Result CloseDoor::perform(Engine& engine) {
         // std::cout << position << ' ' << tile.is_door() << '\n';
         if (tile.is_door()) {
             Door& door = engine.dungeon.doors.at(position);
-            if (door.is_open()) {
+            if (door.is_open() && !tile.actor) {
                 door.close();
                 tile.walkable = false;
                 closed_any_door = true;
