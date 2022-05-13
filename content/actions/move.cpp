@@ -16,6 +16,7 @@ Result Move::perform(Engine& engine) {
     if (tile.is_wall()) {
         return failure();  // alternative (Attack{*tile.actor})
         // Attack& actor
+
     } else if (tile.actor) {
         if (actor->team != tile.actor->team) {
             return alternative(Attack{*tile.actor});

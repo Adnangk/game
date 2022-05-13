@@ -7,6 +7,7 @@
 #include "none.h"
 #include "opendoor.h"
 #include "rest.h"
+#include "throw_act.h"
 namespace Heros {
 
 constexpr int default_speed{8};
@@ -31,6 +32,7 @@ std::unordered_map<std::string, Reaction> key_bindings = {
      }},
 
     {"C", []() { return std::make_unique<CloseDoor>(); }},
+    {"B", []() { return std::make_unique<ThrowAct>(); }},
 };
 
 const HeroType wizard{"wizard", default_speed, 15,

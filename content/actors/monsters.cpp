@@ -39,8 +39,8 @@ MonsterType goblin() {
 
 MonsterType zombie_small() {
     int health = 3;
-    return {"zombie_small", default_speed, health, std::make_shared<Axe>(5),
-            default_behavior};
+    return {"zombie_small", default_speed, health,
+            std::make_shared<BigHammer>(5), default_behavior};
 }
 
 MonsterType muddy() {

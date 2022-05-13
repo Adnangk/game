@@ -4,11 +4,13 @@
 #include "engine.h"
 #include "throw.h"
 
-class Attack : public Action {
+class ThrowAct : public Action {
    public:
-    Attack(Actor& defender);
+    // ThrowAct(Vec direction);
     Result perform(Engine& engine) override;
 
    private:
-    Actor& defender;
+    // Actor& defender;
+    // double delta;
+    // Vec direction;
 };

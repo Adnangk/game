@@ -4,7 +4,7 @@
 #include "hit.h"
 #include "swing.h"
 
-BigHammer::BigHammer(int damage) : Weapon{"hammer", damage} {}
+BigHammer::BigHammer(int damage) : Weapon{"hammer_big", damage} {}
 
 void BigHammer::use(Engine& engine, Actor& attacker, Actor& defender) {
     // engine.events.add(Hit{defender, damage});
