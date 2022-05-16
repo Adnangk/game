@@ -6,6 +6,7 @@ add_library(actions
   wander.cpp
   attack.cpp
   throw_act.cpp
+  teleport.cpp
   )
 
 target_include_directories(actions PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

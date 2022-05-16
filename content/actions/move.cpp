@@ -14,8 +14,7 @@ Result Move::perform(Engine& engine) {
 
     Tile& tile = engine.dungeon.tiles(new_position);
     if (tile.is_wall()) {
-        return failure();  // alternative (Attack{*tile.actor})
-        // Attack& actor
+        return failure();
 
     } else if (tile.actor) {
         if (actor->team != tile.actor->team) {

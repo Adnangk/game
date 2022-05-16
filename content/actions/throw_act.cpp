@@ -13,8 +13,8 @@ Result ThrowAct ::perform(Engine& engine) {
     // Vec direction = actor->direction;
     //  Vec new_position = position + direction * 2;
     std::vector<Vec> between;
-    for (int i; i < 5; ++i) {
-        Vec new_position = position + actor->direction;
+    for (int i = 1; i < 4; ++i) {
+        Vec new_position = position + actor->direction * i;
         between.push_back(new_position);
     }
     for (const Vec& new_position : between) {

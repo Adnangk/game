@@ -8,6 +8,7 @@
 #include "none.h"
 #include "opendoor.h"
 #include "rest.h"
+#include "teleport.h"
 #include "throw_act.h"
 namespace Heros {
 
@@ -34,9 +35,10 @@ std::unordered_map<std::string, Reaction> key_bindings = {
 
     {"C", []() { return std::make_unique<CloseDoor>(); }},
     {"B", []() { return std::make_unique<ThrowAct>(); }},
+    {"J", []() { return std::make_unique<Teleport>(); }},
 };
 
 const HeroType wizard{"wizard", default_speed, 15,
-                      std::make_shared<Cleaver>(12), key_bindings};
+                      std::make_shared<BigHammer>(12), key_bindings};
 
 }  // namespace Heros

@@ -14,8 +14,6 @@ Result CloseDoor::perform(Engine& engine) {
 
     for (const Vec& position : neighbors) {
         Tile& tile = engine.dungeon.tiles(position);
-        // print door(not required)
-        // std::cout << position << ' ' << tile.is_door() << '\n';
         if (tile.is_door()) {
             Door& door = engine.dungeon.doors.at(position);
             if (door.is_open() && !tile.actor) {
