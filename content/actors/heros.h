@@ -1,5 +1,6 @@
 // Adnan Ahmed
 #pragma once
+#include "bhammer.h"
 #include "cleaver.h"
 #include "closedoor.h"
 #include "herotype.h"
